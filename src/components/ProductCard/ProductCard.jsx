@@ -1,4 +1,6 @@
 import styles from "./ProductCard.module.css";
+import ProductButton from "../ProductButton/ProductButton";
+import QuantityAdjustment from "../QuantityAdjustment/QuantityAdjustment"; // Import QuantityAdjustment
 
 export default function ProductCard({ product }) {
   if (!product) return null;
@@ -17,15 +19,18 @@ export default function ProductCard({ product }) {
         <img src={product.image} alt={product.title || "product image"} />
       </div>
       <div className={styles.productInfo}>
+        <h3 className={styles.productTitle}>{product.title}</h3>
         <div className={styles.productTitleRow}>
-          <h3 className={styles.productTitle}>{product.title}</h3>
+          <h3 className={styles.productPrice}>{price}</h3>
           <p className={styles.productRating}>
             {rating ? `${rating} ★ (${ratingCount ?? 0})` : "No rating"}
           </p>
-          <h3 className={styles.productPrice}>{price}</h3>
         </div>
-        <h4 className={styles.productCategory}>{product.category}</h4>
         <p className={styles.productDescription}>{product.description}</p>
+      </div>
+      <div className={styles.actionRow}>
+        <QuantityAdjustment />
+        <ProductButton>Add to Cart</ProductButton>
       </div>
     </div>
   );

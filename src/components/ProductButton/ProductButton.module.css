@@ -1,0 +1,27 @@
+.productButton {
+  background-color: var(--color-primary, #6b9ac4);
+  color: var(--color-background, #2d3142);
+  border: none;
+  border-radius: var(--radius-md, 12px);
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 150ms ease, transform 150ms ease;
+  width: 100%;
+}
+
+.productButton:hover {
+  background-color: var(--color-hover, #628bb2);
+  transform: translateY(-2px);
+}
+
+.productButton:active {
+  background-color: var(--color-accent, #e4a896);
+  transform: translateY(0);
+}
+
+.productButton:disabled {
+  background-color: var(--color-disabled, #d1d5db);
+  cursor: not-allowed;
+}

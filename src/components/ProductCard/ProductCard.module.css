@@ -45,7 +45,7 @@
 }
 
 .productTitleRow {
-  display: block;
+  display: flex;
   align-items: center;
   justify-content: space-between;
 }
@@ -55,6 +55,10 @@
   font-weight: 600;
   color: var(--color-text, #2d3142);
   margin: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* clamp to 3 lines */
+  -webkit-box-orient: vertical;
 }
 
 .productRating {
@@ -87,6 +91,13 @@
   display: -webkit-box;
   -webkit-line-clamp: 3; /* clamp to 3 lines */
   -webkit-box-orient: vertical;
+}
+
+.actionRow {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  align-items: center;
 }
 
 @media (min-width: 640px) {

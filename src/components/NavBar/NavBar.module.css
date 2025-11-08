@@ -1,5 +1,23 @@
 .nav {
-  padding: 2rem;
+  height: 6rem;
   display: flex;
+  justify-content: space-around;
   background-color: var(--color-primary);
+}
+
+.navLink {
+  color: var(--color-background);
+  height: 100%;
+  transition: all 200ms ease;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.navLink:hover {
+  color: var(--color-accent);
+}
+
+.navLink.active {
+  color: var(--color-accent);
 }

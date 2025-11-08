@@ -1,0 +1,117 @@
+.productCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: var(--color-background, #fff);
+  border: 1px solid var(--color-border, #e5e7eb);
+  border-radius: var(--radius-md, 12px);
+  box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.1));
+  padding: 0.75rem;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+  overflow: hidden;
+  max-width: 300px;
+  max-height: 400px;
+}
+
+.productCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.imgWrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: calc(var(--radius-sm, 6px));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.imgWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: var(--color-text, #2d3142);
+  text-align: left;
+}
+
+.productTitleRow {
+  display: block;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.productTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text, #2d3142);
+  margin: 0;
+}
+
+.productRating {
+  font-size: 0.875rem;
+  color: var(--color-secondary, #a9bfcb);
+  margin: 0;
+  white-space: nowrap;
+}
+
+.productPrice {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-accent, #e4a896);
+  margin: 0;
+  white-space: nowrap;
+}
+
+.productCategory {
+  font-size: 0.875rem;
+  color: var(--color-hover, #628bb2);
+  margin: 0;
+}
+
+.productDescription {
+  font-size: 0.9rem;
+  color: rgba(45, 49, 66, 0.85);
+  line-height: 1.35;
+  margin: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* clamp to 3 lines */
+  -webkit-box-orient: vertical;
+}
+
+@media (min-width: 640px) {
+  .productCard {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .imgWrapper {
+    width: 40%;
+    aspect-ratio: 1 / 1;
+    flex: 0 0 40%;
+  }
+
+  .productInfo {
+    width: 90%;
+    flex: 1 1 auto;
+  }
+
+  .productTitle {
+    font-size: 1.05rem;
+  }
+
+  .productPrice {
+    font-size: 1.05rem;
+  }
+}

@@ -1,0 +1,20 @@
+:root {
+  /* === Brand Palette === */
+  --color-background: #fafafa;
+  --color-primary: #6b9ac4;
+  --color-secondary: #a9bfcb;
+  --color-accent: #e4a896;
+  --color-text: #2d3142;
+
+  /* === UI States === */
+  --color-border: #e5e7eb;
+  --color-hover: #628bb2;
+  --color-focus: #4a80a0;
+  --color-disabled: #d1d5db;
+
+  /* === Shadows & Radii === */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --radius-sm: 6px;
+  --radius-md: 12px;
+}

@@ -1,5 +1,12 @@
 import { createContext, useContext, useReducer } from "react";
 
+const defaultContext = {
+  cart: { items: [], total: 0 },
+  dispatch: () => null,
+};
+
+export const CartContext = createContext(defaultContext);
+
 // create the context and describe initial state
 
 // write reducer function with appropriate action types (state, action)
@@ -7,8 +14,6 @@ import { createContext, useContext, useReducer } from "react";
 // export the cartProvider which will use the reducer to update the state
 
 // export function to use the cart context which will reliably return the CartContext
-
-const CartContext = createContext(null);
 
 const initialState = {
   items: [],
@@ -89,10 +94,17 @@ function cartReducer(state, action) {
   }
 }
 
-export function CartProvider({ children }) {
+export function CartProvider({
+  children,
+  initialState = { items: [], total: 0 },
+}) {
   const [cart, dispatch] = useReducer(cartReducer, initialState);
 
-  return <CartContext value={{ cart, dispatch }}>{children}</CartContext>;
+  return (
+    <CartContext.Provider value={{ cart, dispatch }}>
+      {children}
+    </CartContext.Provider>
+  );
 }
 
 export function useCart() {

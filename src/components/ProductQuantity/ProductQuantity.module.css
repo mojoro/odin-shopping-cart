@@ -1,10 +1,10 @@
-.quantityAdjustment {
+.ProductQuantity {
   display: flex;
   align-items: center;
   position: relative;
 }
 
-.quantityAdjustment button {
+.ProductQuantity button {
   background-color: transparent;
   color: var(--color-background, #fff);
   border: none;
@@ -18,11 +18,11 @@
   z-index: 1;
 }
 
-.quantityAdjustment button:first-child {
+.ProductQuantity button:first-child {
   left: 2px;
 }
 
-.quantityAdjustment button:last-child {
+.ProductQuantity button:last-child {
   right: 2px;
 }
 

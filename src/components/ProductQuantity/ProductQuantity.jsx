@@ -1,8 +1,9 @@
 import { useState } from "react";
-import styles from "./QuantityAdjustment.module.css"; // Create a CSS module for styles
+import { useCart } from "../../context/CartContext";
+import styles from "./ProductQuantity.module.css"; // Create a CSS module for styles
 
-export default function QuantityAdjustment() {
-  const [quantity, setQuantity] = useState(1);
+export default function ProductQuantity({ quantityState, product }) {
+  const [quantity, setQuantity] = quantityState;
 
   const increment = () => setQuantity((prev) => prev + 1);
   const decrement = () => setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
@@ -13,7 +14,7 @@ export default function QuantityAdjustment() {
   };
 
   return (
-    <div className={styles.quantityAdjustment}>
+    <div className={styles.ProductQuantity}>
       <button onClick={decrement}>-</button>
       <input
         type="number"

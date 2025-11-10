@@ -2,17 +2,19 @@ import { useLoaderData } from "react-router-dom";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import styles from "./Shop.module.css";
 
-export async function loader() {
-  const res = await fetch("https://fakestoreapi.com/products");
-  const products = await res.json();
-  if (!products) {
+export async function loader({ request }) {
+  let products = await fetch("https://fakestoreapi.com/products", {
+    signal: request.signal,
+  });
+
+  if (!products.ok) {
     throw new Response("", {
-      status: 404,
-      statusText: "Not Found",
+      status: products.status,
+      statusText: "API Error",
     });
   }
 
-  return { products };
+  return { products: await products.json() };
 }
 
 export default function Shop() {

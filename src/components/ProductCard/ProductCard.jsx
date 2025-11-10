@@ -1,8 +1,10 @@
 import styles from "./ProductCard.module.css";
 import ProductButton from "../ProductButton/ProductButton";
-import QuantityAdjustment from "../QuantityAdjustment/QuantityAdjustment"; // Import QuantityAdjustment
+import ProductQuantity from "../ProductQuantity/ProductQuantity"; // Import ProductQuantity
+import { useState } from "react";
 
 export default function ProductCard({ product }) {
+  const [quantity, setQuantity] = useState(1);
   if (!product) return null;
 
   const price = new Intl.NumberFormat("en-US", {
@@ -29,8 +31,16 @@ export default function ProductCard({ product }) {
         <p className={styles.productDescription}>{product.description}</p>
       </div>
       <div className={styles.actionRow}>
-        <QuantityAdjustment />
-        <ProductButton>Add to Cart</ProductButton>
+        <ProductQuantity
+          quantityState={[quantity, setQuantity]}
+          product={product}
+        />
+        <ProductButton
+          quantityState={[quantity, setQuantity]}
+          product={product}
+        >
+          Add to Cart
+        </ProductButton>
       </div>
     </div>
   );

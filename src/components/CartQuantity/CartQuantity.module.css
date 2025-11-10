@@ -1,0 +1,39 @@
+.cartQuantity {
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.quantityButton {
+  background: var(--color-background);
+  border: none;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.quantityButton:hover {
+  background: var(--color-border);
+}
+
+.quantityInput {
+  width: 40px;
+  border: none;
+  text-align: center;
+  font-size: 0.875rem;
+  padding: 0.5rem 0;
+  -moz-appearance: textfield;
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+.quantityInput::-webkit-inner-spin-button,
+.quantityInput::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

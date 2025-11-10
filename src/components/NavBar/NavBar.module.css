@@ -9,9 +9,28 @@
   color: var(--color-background);
   height: 100%;
   transition: all 200ms ease;
-  display: flex;
+  position: relative;
+  display: inline-flex;
   align-items: center;
-  padding: 0 2rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.cartBadge {
+  position: absolute;
+  left: -15px;
+  background: var(--color-accent);
+  color: var(--color-background);
+  border-radius: 100%;
+  width: 10px;
+  height: 20px;
+  padding: 0 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 .navLink:hover {

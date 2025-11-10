@@ -1,7 +1,10 @@
-import styles from "./NavBar.module.css";
 import { NavLink } from "react-router-dom";
+import { useCart } from "../../context/CartContext";
+import styles from "./NavBar.module.css";
 
-const NavBar = () => {
+export default function NavBar() {
+  const { cart } = useCart();
+
   return (
     <nav className={styles.nav}>
       <NavLink to="/" className={styles.navLink}>
@@ -10,11 +13,17 @@ const NavBar = () => {
       <NavLink to="/shop" className={styles.navLink}>
         Shop
       </NavLink>
-      <NavLink to="/cart" className={styles.navLink}>
+      <NavLink
+        to="/cart"
+        className={({ isActive }) =>
+          isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
+        }
+      >
         Cart
+        {cart?.items?.length > 0 && (
+          <span className={styles.cartBadge}>{cart.items.length}</span>
+        )}
       </NavLink>
     </nav>
   );
-};
-
-export default NavBar;
+}

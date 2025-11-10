@@ -1,0 +1,146 @@
+.homepage {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.hero {
+  background: linear-gradient(
+    rgba(107, 154, 196, 0.1),
+    rgba(107, 154, 196, 0.2)
+  );
+  padding: 6rem 2rem;
+  text-align: center;
+  margin-bottom: 4rem;
+  color: var(--color-background);
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroContent h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.heroContent p {
+  font-size: 1.25rem;
+  color: var(--color-background);
+  margin-bottom: 2rem;
+}
+
+.shopButton {
+  display: inline-block;
+  background: var(--color-primary);
+  color: var(--color-background);
+  padding: 1rem 2rem;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 150ms ease, background-color 150ms ease;
+}
+
+.shopButton:hover {
+  color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+  margin-bottom: 4rem;
+}
+
+.feature {
+  text-align: center;
+  padding: 2rem;
+  background: var(--color-background);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+.icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.categories {
+  padding: 2rem;
+  margin-bottom: 4rem;
+  color: var(--color-background);
+}
+
+.categories h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.category {
+  position: relative;
+  height: 200px;
+  background: var(--color-primary);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform 150ms ease;
+}
+
+.category:hover {
+  transform: translateY(-4px);
+}
+
+.categoryContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(transparent, rgba(45, 49, 66, 0.8));
+  color: var(--color-background);
+}
+
+.categoryContent h3 {
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.categoryContent p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+@media (max-width: 1200px) {
+  .categoryGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .heroContent h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .categoryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heroContent h1 {
+    font-size: 2rem;
+  }
+}
